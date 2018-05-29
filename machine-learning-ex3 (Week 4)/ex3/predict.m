@@ -22,10 +22,12 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X = [ones(m, 1) X];             % adding column of one's
+a2 = sigmoid(X * Theta1');      % a2 = g(z2) = g(X*Theta1')
+a2 = [ones(m, 1) a2];           % adding column of one's
+a3 = sigmoid(a2 * Theta2');     % a3 = g(z3) = g(a2 * Theta2') = htheta(x)
 
-
-
-
+[val, p] = max(a3, [], 2);      
 
 
 
